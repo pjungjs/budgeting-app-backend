@@ -1,74 +1,52 @@
 module.exports = [
   {
     id: 101, // unique id
-    item_name: "Paycheck", //name of the transaction
-    amout: 4000, //number with up to two decimals
-    date: "Apr 1, 2023", //date in a string
-    from: "Work", //who's giving or taking (from or to)
-    tag: "Salary", //tag for filtering
-    category: "Income" //income or expense
+    item_name: "paycheck", //name of the transaction
+    amount: 8000, //number with up to two decimals
+    date: "2023-04-01", //date in a string
+    from_to: "uber", //who's giving or taking (from or to)
+    tag: "salary", //tag for filtering
+    note: "",
+    category: "income" //income or expense
   },
   {
     id: 102,
-    item_name: "Rent",
-    amout: 2000,
-    date: "Apr 2, 2023",
-    from: "Landlord",
-    tag: "Housing",
-    category: "Expense"
+    item_name: "rent",
+    amount: 2500,
+    date: "2023-04-02",
+    from_to: "landlord",
+    tag: "housing",
+    note: "",
+    category: "expense"
   },
   {
     id: 103,
-    item_name: "Electricity Bill",
-    amout: 60,
-    date: "Apr 7, 2023",
-    from: "ConEdison",
-    tag: "Utility",
-    category: "Expense"
+    item_name: "car insurance",
+    amount: 200,
+    date: "2023-04-14",
+    from_to: "Geico",
+    tag: "insurance",
+    note: "",
+    category: "expense"
   },
   {
     id: 104,
-    item_name: "Grocery",
-    amout: 200,
-    date: "Apr 10, 2023",
-    from: "Grocery Stor",
-    tag: "Grocery",
-    category: "Expense"
+    item_name: "electricity bill",
+    amount: 80,
+    date: "2023-04-07",
+    from_to: "conedison",
+    tag: "utility",
+    note: "",
+    category: "expense"
   },
   {
     id: 105,
-    item_name: "Takout",
-    amout: 18.75,
-    date: "Apr 11, 2023",
-    from: "Restaurant",
-    tag: "Food",
-    category: "Expense"
-  },
-  {
-    id: 106,
-    item_name: "Disney Plus",
-    amout: 19.99,
-    date: "Apr 14, 2023",
-    from: "Disney",
-    tag: "Subscription",
-    category: "Expense"
-  },
-  {
-    id: 107,
-    item_name: "Netflix Premium",
-    amout: 19.99,
-    date: "Apr 15, 2023",
-    from: "Netflix",
-    tag: "Subscription",
-    category: "Expense"
-  },
-  {
-    id: 108,
-    item_name: "Uber Payout",
-    amout: 300,
-    date: "Apr 20, 2023",
-    from: "Uber",
-    tag: "Side job",
-    category: "Income"
+    item_name: "netflix",
+    amount: 20,
+    date: "2023-04-15",
+    from_to: "netflix",
+    tag: "subscription",
+    note: "premium",
+    category: "expense"
   },
 ];

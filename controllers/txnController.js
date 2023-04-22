@@ -1,6 +1,12 @@
 const txn = require('express').Router();
 const txnModel = require('../models/txnModel.js');
 
+function returnIndexById(id) {
+  const filteredById = txnModel.find(txn => txn.id.toString() === id);
+  const indexById = txnModel.indexOf(filteredById);
+  return indexById;
+}
+
 /*** GET: read ***/
 //get all
 txn.get('/', (req, res) => {
@@ -10,17 +16,18 @@ txn.get('/', (req, res) => {
 //get by id
 txn.get('/:id', (req, res) => {
   const { id } = req.params;
-  if (txnModel[id]) {
-    res.status(202).json(txnModel[id]);
-  } else {
-    res.status(404).redirect('/error');
-  }
+  const index = returnIndexById(id);
+
+  txnModel[index]
+  ? res.status(202).json(txnModel[index])
+  : res.status(404).redirect('/error')
 })
 
 
 /*** POST: create ***/
 txn.post('/', (req, res) => {
   const newTxn = req.body;
+
   txnModel.push(newTxn);
   res.status(202).json(newTxn);
 })
@@ -30,8 +37,10 @@ txn.post('/', (req, res) => {
 txn.put('/:id', (req, res) => {
   const { id } = req.params;
   const updatedTxn = req.body;
-  if (txnModel[id]) {
-    txnModel[id] = updatedTxn;
+  const index = returnIndexById(id);
+
+  if (txnModel[index]) {
+    txnModel[index] = updatedTxn;
     res.status(202).json(updatedTxn);
   } else {
     res.status(404).redirect('/error');
@@ -42,9 +51,10 @@ txn.put('/:id', (req, res) => {
 /*** DELETE: destroy ***/
 txn.delete('/:id', (req, res) => {
   const { id } = req.params;
-  const deletedTxn = txnModel.splice(id, 1);
+  const index = returnIndexById(id);
+  const deletedTxn = txnModel.splice(index, 1);
 
-  txnModel[id]
+  deletedTxn
   ? res.status(202).json(deletedTxn)
   : res.status(404).redirect('/error')
 })
