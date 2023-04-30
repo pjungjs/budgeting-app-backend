@@ -2,14 +2,14 @@ const txn = require('express').Router();
 const txnModel = require('../models/txnModel.js');
 
 function returnIndexById(id) {
-  const filteredById = txnModel.find(txn => txn.id.toString() === id);
+  const filteredById = txnModel.find(txn => parseInt(txn.id) === parseIng(id));
   const indexById = txnModel.indexOf(filteredById);
   return indexById;
 }
 
 /*** GET: read ***/
 //get all
-txn.get('/', (req, res) => {
+txn.get('/', (_, res) => {
   res.status(202).json(txnModel);
 })
 

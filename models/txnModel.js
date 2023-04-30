@@ -5,9 +5,9 @@ module.exports = [
     amount: 8000, //number with up to two decimals
     date: "2023-04-01", //date in a string
     from_to: "uber", //who's giving or taking (from or to)
-    tag: "salary", //tag for filtering
-    note: "",
-    category: "income" //income or expense
+    category: "salary", //transaction category
+    note: "", //note, if there's any
+    type: "deposit" //deposit or withdrawal
   },
   {
     id: 102,
@@ -15,9 +15,9 @@ module.exports = [
     amount: 2500,
     date: "2023-04-02",
     from_to: "landlord",
-    tag: "housing",
+    category: "housing",
     note: "",
-    category: "expense"
+    type: "withdrawal"
   },
   {
     id: 103,
@@ -25,9 +25,9 @@ module.exports = [
     amount: 200,
     date: "2023-04-14",
     from_to: "Geico",
-    tag: "insurance",
+    category: "insurance",
     note: "",
-    category: "expense"
+    type: "withdrawal"
   },
   {
     id: 104,
@@ -35,18 +35,18 @@ module.exports = [
     amount: 80,
     date: "2023-04-07",
     from_to: "conedison",
-    tag: "utility",
+    category: "utility",
     note: "",
-    category: "expense"
+    type: "withdrawal"
   },
   {
     id: 105,
-    item_name: "netflix",
+    item_name: "streaming service",
     amount: 20,
     date: "2023-04-15",
     from_to: "netflix",
-    tag: "subscription",
+    category: "subscription",
     note: "premium",
-    category: "expense"
+    type: "withdrawal"
   },
 ];
