@@ -2,7 +2,7 @@ const txn = require('express').Router();
 const txnModel = require('../models/txnModel.js');
 
 function returnIndexById(id) {
-  const filteredById = txnModel.find(txn => parseInt(txn.id) === parseIng(id));
+  const filteredById = txnModel.find(txn => parseInt(txn.id) === parseInt(id));
   const indexById = txnModel.indexOf(filteredById);
   return indexById;
 }
